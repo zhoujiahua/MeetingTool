@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-from utils.SystemTool import print_info
+from utils.SystemTool import print_info, public_network
 import webbrowser
 import schedule
 import datetime
@@ -68,11 +68,11 @@ def start_meeting():
     for item in user_data:
         try:
             if item["name"] == "vincent.chu":
-                schedule.every().day.at("10:18").do(web_browser, url=item["url"])
+                schedule.every().day.at("10:18").do(web_browser, parm=item)
             elif item["name"] == "jesse.guo":
-                schedule.every().tuesday.at("12:58").do(web_browser, url=item["url"])
+                schedule.every().tuesday.at("13:04").do(web_browser, parm=item)
             elif item["name"] == "cheney.cao":
-                schedule.every().tuesday.at("15:58").do(web_browser, url=item["url"])
+                schedule.every().tuesday.at("15:58").do(web_browser, parm=item)
             else:
                 print('No more task...')
         except Exception as e:
@@ -105,5 +105,6 @@ def test_meeting():
 
 
 if __name__ == "__main__":
-    print_info()
+    print(public_network())
+    print_info(language="en")
     start_meeting()
