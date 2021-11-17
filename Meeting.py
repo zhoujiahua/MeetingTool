@@ -70,7 +70,7 @@ def start_meeting():
             if item["name"] == "vincent.chu":
                 schedule.every().day.at("10:18").do(web_browser, parm=item)
             elif item["name"] == "jesse.guo":
-                schedule.every().tuesday.at("13:04").do(web_browser, parm=item)
+                schedule.every().tuesday.at("12:58").do(web_browser, parm=item)
             elif item["name"] == "cheney.cao":
                 schedule.every().tuesday.at("15:58").do(web_browser, parm=item)
             else:
