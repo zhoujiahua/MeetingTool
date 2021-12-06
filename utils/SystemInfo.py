@@ -1,5 +1,5 @@
-# python platform#!/usr/bin/python3
-# # -*- coding: UTF-8 -*-
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
 
 import platform
 

@@ -1,44 +1,19 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-from utils.SystemTool import print_info, public_network
+from store.Datas import user_list, base_url
+from utils.SystemTool import print_info, public_network, computer_info
 import webbrowser
+import requests
 import schedule
 import datetime
 import logging
 import time
 import uuid
+import re
 
 logging.basicConfig(filename='logger.log', level=logging.INFO)
 LOG = logging.getLogger(__name__)
-
-base_url = "https://advantest.webex.com/meet"
-user_list = [
-    {
-        "id": 1,
-        "name": "vincent.chu",
-        "status": True,
-        "rule": "",
-        "date": "",
-        "url": ""
-    },
-    {
-        "id": 2,
-        "name": "cheney.cao",
-        "status": True,
-        "rule": "",
-        "date": "",
-        "url": ""
-    },
-    {
-        "id": 3,
-        "name": "jesse.guo",
-        "status": True,
-        "rule": "",
-        "date": "",
-        "url": ""
-    }
-]
 
 
 # Open browser
@@ -105,6 +80,18 @@ def test_meeting():
 
 
 if __name__ == "__main__":
-    print(public_network())
-    print_info(language="en")
-    start_meeting()
+    # print(public_network())
+    # print_info(language="en")
+    # start_meeting()
+    print(computer_info())
+    url = "http://c.biancheng.net/view/5895.html"
+    print(re.findall(r'://', url))
+    res = requests.get(url)
+    res.encoding = 'utf-8'
+    print(type(res))
+    print(res.__attrs__)
+    print(res.headers)
+    if res.status_code == 200:
+        print('Success...')
+    else:
+        print('No...')

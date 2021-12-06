@@ -50,9 +50,17 @@ def print_info(language="cn"):
 # Get computer information
 def computer_info():
     return {
-        "operating_system_and_version_information": platform.platform(),
-        "get_system_version_number": platform.version(),
-        "get_system_name": platform.system(),
+        "platform": platform.platform(),
+        "version": platform.version(),
+        "system": platform.system(),
+        "architecture": platform.architecture(),
+        "machine": platform.machine(),
+        "node": platform.node(),
+        "mac_address": mac_address(),
+        "processor": platform.processor(),
+        "uname": platform.uname(),
+        "python_build": platform.python_build(),
+        "python_version": platform.python_version()
     }
 
 
