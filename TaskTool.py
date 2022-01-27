@@ -8,6 +8,7 @@ import requests
 import schedule
 import datetime
 import logging
+import json
 import time
 import uuid
 import re
@@ -79,19 +80,23 @@ def test_meeting():
         time.sleep(1)
 
 
+# Requests Get
+def fetch_data():
+    url = "http://v.juhe.cn/toutiao/index?key=e6ce9e8fd1b6d1e6e40b74b9d6a6aff8"
+    curl = re.findall(r'://', url)
+    print(curl)
+    res = requests.get(url)
+    res.encoding = 'utf-8'
+    if res.status_code == 200:
+        print('Success...')
+        print(res.text)
+    else:
+        print('No...')
+
+
 if __name__ == "__main__":
     # print(public_network())
     # print_info(language="en")
     # start_meeting()
     print(computer_info())
-    url = "http://c.biancheng.net/view/5895.html"
-    print(re.findall(r'://', url))
-    res = requests.get(url)
-    res.encoding = 'utf-8'
-    print(type(res))
-    print(res.__attrs__)
-    print(res.headers)
-    if res.status_code == 200:
-        print('Success...')
-    else:
-        print('No...')
+    print(fetch_data())
