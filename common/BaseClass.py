@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-def run_time(func):
-    return def wrapper():
-        return 
-
-
 
 class Student:
     def __init__(self, name, age):
